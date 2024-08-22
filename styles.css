@@ -1,0 +1,283 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Calibri', sans-serif;
+    background-color: black;
+    color: white;
+    padding-top: 60px; /* Ajuste para mobile-first */
+}
+
+nav {
+    background-color: white;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between; /* Asegura la separación de elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+nav img {
+    height: 70px;
+    margin-left: -20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    gap: 40px; /* Espacio entre los elementos */
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+nav .logo-right {
+    height: 65px;
+    margin-left: auto; /* Asegura que el logo derecho se alinee a la derecha */
+    margin-right: 40px;
+}
+
+.menu-button:focus + .nav-links,
+.nav-links:focus-within {
+    display: flex; /* Hace visibles los enlaces cuando se activa el botón del menú */
+}
+
+nav button {
+    padding: 15px;
+}
+
+.menu-button {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.content-container, .bibliography-section {
+    width: 70%; /* Establecido para tablet y desktop */
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: white;
+    color: black;
+    text-align: justify;
+    transform: translateY(-60px); /* Desplaza la imagen 20px hacia arriba */
+}
+
+td{
+    text-align: center;
+}
+
+.dataframe.ecoregions-table td,
+.dataframe.exogenous-table td,
+.dataframe.endogenous-table td{
+    text-align: left;
+}
+
+.dataframe.ecoregions-table th,
+.dataframe.exogenous-table th,
+.dataframe.endogenous-table th {
+    text-align: center;
+}
+
+.dataframe.criteria-table,
+.dataframe.exogenous-table,
+.dataframe.endogenous-table,
+.dataframe.ecoregions-table,
+.dataframe.pressures-table {
+    width: 100%; 
+    margin-top: 50px; 
+    overflow-x: auto; 
+    border: 1px solid black; 
+    border-collapse: collapse;
+}
+
+.dataframe.criteria-table th,
+.dataframe.criteria-table td,
+.dataframe.exogenous-table th,
+.dataframe.exogenous-table td,
+.dataframe.endogenous-table th,
+.dataframe.endogenous-table td,
+.dataframe.ecoregions-table th,
+.dataframe.ecoregions-table td,
+.dataframe.pressures-table th,
+.dataframe.pressures-table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+li a {
+    color: #8a28a8ed; /* Color de los enlaces */
+}
+
+.submit-button {
+    margin-left: auto;
+}
+
+.home-section {
+    position: relative;
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+}
+
+.home-image {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+    position: relative;
+    top: -60px;
+    z-index: 1;
+}
+
+.cite{
+    font-size: 0.9vw;
+}
+
+.main-header {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 70%;
+    font-size: 2.5vw;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+        background: none;
+        border: none;
+        color: black;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 102;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .submit-button {
+        order: 1;
+        margin-left: auto;
+        margin-right: 20px;
+        font-size: 10px;
+    }
+
+    nav {
+        width: 100vw;
+        padding: 0 10px;
+    }
+
+    .nav-links{
+        display: none;
+        width: 20%;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        background-color: white;
+        padding: 10px 0;
+        font-size: 16px;
+        align-items: center; 
+        justify-content: center;
+        z-index: 101;
+    }
+
+    .nav-links a{
+        font-size: 10px;
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+        box-sizing: border-box;
+        display: block;
+    }
+
+ 
+
+ 
+
+    .menu-button:focus + .nav-links,
+    .nav-links:focus-within {
+        display: flex;
+    }
+
+    .fixed-text {
+        left: -25px;
+        font-size: 2.5vw;
+    }
+
+    .content-container{
+        padding: 20;
+        padding-right: -20px;
+        background-color: white;
+        width: 90%;
+    }
+
+    .dataframe.criteria-table {
+        width: 100%;
+        margin-top: 50px;
+        overflow-x: auto;
+        border:"1";
+    }
+
+    .dataframe.pressures-table{
+        width: 100%;
+        margin-top: 50px;
+        overflow-x: auto;
+        border:"1";
+    }
+
+    .home-section {
+        position: relative;
+        text-align: center;
+        background-color: black;
+        color: white;
+        margin: 0 auto;
+    }
+
+    .cite{
+        font-size: 3vw;
+    }
+
+    .main-header {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        color: white;
+        width: 100%;
+        align-items: center; 
+        z-index: 2;
+    }
+
+    .home-image {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: -60px;
+        z-index: 1;
+    }
+
+    .criteria-table-container {
+    overflow-x: auto;
+    }
+
+    .pressures-table-container {
+    overflow-x: auto;
+    }
+}
