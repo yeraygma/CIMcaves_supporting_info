@@ -269,7 +269,7 @@ li a {
 
     .main-header {
         position: absolute;
-        top: 20%;
+        top: 10%;
         left: 50%;
         transform: translate(-50%, -30%);
         color: white;
@@ -288,7 +288,17 @@ li a {
         z-index: 1;
     }
 
-    .criteria-table-container {
+    .home-section {
+        position: relative;
+        text-align: center;
+        background-color: black;
+        color: white;
+        margin: 0 auto;
+        padding-bottom: 20px; /* Añadir espacio inferior si es necesario */
+    }
+
+    .criteria-table-container, .endogenous-table-container, .exogenous-table-container, 
+    .ecoregions-table-container {
     overflow-x: auto;
     }
 

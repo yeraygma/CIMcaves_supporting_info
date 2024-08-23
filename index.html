@@ -7,44 +7,49 @@
     <link rel="stylesheet" href="styles.css">
 
     <script>
-      function showSection(sectionId) {
-          var sections = document.querySelectorAll('.content-container');
-          sections.forEach(function(section) {
-              section.style.display = 'none';
-          });
+     document.addEventListener('DOMContentLoaded', function() {
+    // Ocultar todas las secciones al cargar la página, excepto el div específico en 'home'
+    var sections = document.querySelectorAll('.content-container');
+    sections.forEach(function(section) {
+        if (section.id !== 'home-content') {
+            section.style.display = 'none';
+        }
+    });
 
-          var targetSection = document.getElementById(sectionId);
-          targetSection.style.display = 'block';
+    var navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            var targetId = this.getAttribute('href').substring(1);
+            showSection(targetId);
+        });
+    });
 
-          var offset = document.querySelector('nav').offsetHeight;
-          var elementPosition = targetSection.getBoundingClientRect().top;
-          var offsetPosition = elementPosition - offset;
+    // Mostrar/ocultar el menú en pantallas móviles
+    document.querySelector('.menu-button').addEventListener('click', function() {
+        var navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    });
+});
 
-          window.scrollBy({ top: offsetPosition, behavior: 'smooth' });
-      }
+function showSection(sectionId) {
+    var sections = document.querySelectorAll('.content-container');
+    sections.forEach(function(section) {
+        section.style.display = 'none';
+    });
 
-      document.addEventListener('DOMContentLoaded', function() {
-          // Ocultar todas las secciones al cargar la página
-          var sections = document.querySelectorAll('.content-container');
-          sections.forEach(function(section) {
-              section.style.display = 'none';
-          });
+    var targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.style.display = 'block';
 
-          var navLinks = document.querySelectorAll('.nav-links a');
-          navLinks.forEach(function(link) {
-              link.addEventListener('click', function(event) {
-                  event.preventDefault();
-                  var targetId = this.getAttribute('href').substring(1);
-                  showSection(targetId);
-              });
-          });
+        var offset = document.querySelector('nav').offsetHeight;
+        var elementPosition = targetSection.getBoundingClientRect().top;
+        var offsetPosition = elementPosition - offset;
 
-          // Mostrar/ocultar el menú en pantallas móviles
-          document.querySelector('.menu-button').addEventListener('click', function() {
-              var navLinks = document.querySelector('.nav-links');
-              navLinks.classList.toggle('show');
-          });
-      });
+        window.scrollBy({ top: offsetPosition, behavior: 'smooth' });
+    }
+}
+
   </script>
      
 
@@ -62,6 +67,9 @@
             <a href="#bibliography"><b>BIBLIOGRAPHY</b></a>
         </div>
       <img src="./logos_cimcaves/logo2_cimcaves.jpg" alt="LogoCIMcaves" class="logo-right">
+
+      
+    </div>
         
     </nav>
 
@@ -78,16 +86,27 @@
 
 </script>
 
-    <div id="home" class="home-section">
-      <header class="main-header">
-          <h1>CIMcaves Survey </h1>
-          <h1>
+<div id="home" class="home-section">
+    <header class="main-header">
+        <h1>CIMcaves Survey</h1>
+        <h1>Supporting Information</h1>
+    </header>
+    <img src="./foto_background/divers_sargos.JPG" alt="Background" class="home-image">
 
-          </h1>
-          <h1>Supporting Information</h1>
-      </header>
-      <img src="./foto_background/divers_sargos.JPG" alt="Background" class="home-image">
+    <!-- Nuevo div debajo de la imagen, que queremos que se vea por defecto -->
+    <div id="home-content" class="content-container">
+        <h1>Welcome</h1>
+        <p>This website contains supplementary information to fill out the survey, such as definitions, the ecoregions of the world so that you can find yours, the criteria for evaluating pressures, and selected bibliography. Click on the menu to search for each section.
+        </p>
+        <p>
+        If you are taking the survey, don't worry, from there are links that will take you to each section at the appropriate time.
+        </p>
+        
+        &nbsp;&nbsp;<h3>
+        Thank you, we highly appreciate your participation!    
+        </h3>
     </div>
+</div>
 
 
     <div id= "definitions" class="content-container" style="display: none;">
