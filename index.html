@@ -50,7 +50,7 @@ function showSection(sectionId) {
     }
 }
 
-document.getElementById('definitions').addEventListener('click', function(event) {
+document.getElementById('definitionsLink').addEventListener('click', function(event) {
     event.preventDefault();
     document.querySelector('#definitions').scrollIntoView({
         behavior: 'smooth'
@@ -58,15 +58,15 @@ document.getElementById('definitions').addEventListener('click', function(event)
 });
 
 
-document.getElementById('ecoregions').addEventListener('click', function(event) {
+document.getElementById('ecoregionsLink').addEventListener('click', function(event) {
     event.preventDefault();
     document.querySelector('#ecoregions').scrollIntoView({
         behavior: 'smooth'
     });
-});
+}); 
 
 
-document.getElementById('criteria').addEventListener('click', function(event) {
+document.getElementById('criteriaLink').addEventListener('click', function(event) {
     event.preventDefault();
     document.querySelector('#criteria').scrollIntoView({
         behavior: 'smooth'
@@ -74,7 +74,7 @@ document.getElementById('criteria').addEventListener('click', function(event) {
 });
 
 
-document.getElementById('bibliography').addEventListener('click', function(event) {
+document.getElementById('bibliographyLink').addEventListener('click', function(event) {
     event.preventDefault();
     document.querySelector('#bibliography').scrollIntoView({
         behavior: 'smooth'
