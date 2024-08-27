@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <script>
-     document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     // Ocultar todas las secciones al cargar la página, excepto el div específico en 'home'
     var sections = document.querySelectorAll('.content-container');
     sections.forEach(function(section) {
@@ -30,6 +30,14 @@
         var navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('show');
     });
+
+    // Detectar parámetros en la URL y redirigir a la sección correspondiente
+    const params = new URLSearchParams(window.location.search);
+    const section = params.get("section");
+
+    if (section) {
+        showSection(section);
+    }
 });
 
 function showSection(sectionId) {
@@ -50,36 +58,7 @@ function showSection(sectionId) {
     }
 }
 
-document.getElementById('definitionsLink').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.querySelector('#definitions').scrollIntoView({
-        behavior: 'smooth'
-    });
-});
 
-
-document.getElementById('ecoregionsLink').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.querySelector('#ecoregions').scrollIntoView({
-        behavior: 'smooth'
-    });
-}); 
-
-
-document.getElementById('criteriaLink').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.querySelector('#criteria').scrollIntoView({
-        behavior: 'smooth'
-    });
-});
-
-
-document.getElementById('bibliographyLink').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.querySelector('#bibliography').scrollIntoView({
-        behavior: 'smooth'
-    });
-});
 
 
   </script>
