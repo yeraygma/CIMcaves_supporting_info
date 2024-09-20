@@ -15,22 +15,30 @@ nav {
     left: 0;
     width: 100vw;
     display: flex;
-    justify-content: space-between; /* Asegura la separación de elementos */
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
     align-items: center; /* Centra verticalmente los elementos */
     padding: 0 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
 
-nav img {
-    height: 7vw;
-    margin-right: 5%;
+/* Añadido: Definición de .nav-center para pantallas de escritorio */
+.nav-center {
+    display: flex;
+    flex: 1; /* Ocupa el espacio disponible entre el menú y el logo derecho */
+    justify-content: center; /* Centra horizontalmente las imágenes */
+    align-items: center;
+}
+
+.nav-center img {
+    height: 2.2vw;
+    margin: 0 1vw; /* Ajusta el espacio entre las imágenes */
 }
 
 nav .logo-right {
     height: 5.5vw;
-    margin-left: auto; /* Asegura que el logo derecho se alinee a la derecha */
-    
+    margin-left: auto;
+    margin-right: 5%; /* Alinea el logo derecho a la derecha */
 }
 
 .nav-links {
@@ -45,8 +53,6 @@ nav .logo-right {
     text-decoration: none;
     font-size: 1.5vw;
 }
-
-
 
 .menu-button:focus + .nav-links,
 .nav-links:focus-within {
@@ -72,16 +78,16 @@ nav button {
     background-color: white;
     color: black;
     text-align: justify;
-    transform: translateY(-60px); /* Desplaza la imagen 20px hacia arriba */
+    transform: translateY(-60px); /* Desplaza la imagen 60px hacia arriba */
 }
 
-td{
+td {
     text-align: center;
 }
 
 .dataframe.ecoregions-table td,
 .dataframe.exogenous-table td,
-.dataframe.endogenous-table td{
+.dataframe.endogenous-table td {
     text-align: left;
 }
 
@@ -143,7 +149,7 @@ li a {
     z-index: 1;
 }
 
-.cite{
+.cite {
     font-size: 0.9vw;
 }
 
@@ -158,6 +164,7 @@ li a {
     z-index: 2;
 }
 
+/* Estilos para pantallas móviles */
 @media (max-width: 768px) {
     .menu-button {
         display: block;
@@ -166,10 +173,6 @@ li a {
         color: black;
         font-size: 24px;
         cursor: pointer;
-        z-index: 102;
-        position: absolute;
-        left: 10%;
-        transform: translateX(-50%);
     }
 
     .menu-button:focus + .nav-links,
@@ -184,29 +187,21 @@ li a {
         font-size: 10px;
     }
 
-    nav {
-        width: 100vw;  /* Usa 100vw para asegurar que no se salga del viewport */
-        padding: 0 10px;  /* Ajusta el padding para dispositivos móviles si es necesario */
-        height: 17vw; 
-    }
-
-    .nav-links{
+    .nav-links {
         display: none;
-        width: 20%; /* Ocupa todo el ancho cuando se muestra */
+        width: 80%; /* Ocupa el 80% del ancho cuando se muestra */
         flex-direction: column;
         position: absolute;
         top: 70px;
         background-color: white;
-        width: 80%;
         padding: 10px 0;
         font-size: 16px;
         align-items: center; 
         justify-content: center;
         z-index: 101;  /* Asegura que esté por encima de otros elementos */
-
     }
 
-    .nav-links a{
+    .nav-links a {
         font-size: 10px;
         width: 100%;
         text-align: center;
@@ -215,44 +210,48 @@ li a {
         display: block;
     }
 
+    nav {
+        width: 100vw;
+        padding: 0 10px;
+        height: 17vw; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-center {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center; /* Centra las imágenes en móviles */
+        gap: 5px
+    }
+
+    .nav-center img {
+        height: 6vw;
+        margin: 0 2vw; /* Ajusta el espacio entre las imágenes */
+    }
+
     nav .logo-right {
-        height: 15vw;
-        order: 2;
-        right: 0%; /* Alinea la imagen a la derecha */
+        height: 9vw;
+        margin-left: auto; /* Alinea el logo derecho a la derecha */
+        
+        margin-right: 5%;
     }
 
-    nav img {
-        height: 80%;
-        position: absolute;
-        left: 45%;
-        transform: translateX(-50%); /* Centra el logo en la barra de navegación */
-        z-index: 100;
-    }
-
- 
-
-    
-
-
-    .content-container{
-        padding: 20;
-        padding-right: -20px;
+    .content-container {
+        padding: 20px;
         background-color: white;
         width: 90%;
+        transform: translateY(-60px); /* Ajuste para móviles */
     }
 
-    .dataframe.criteria-table {
+    .dataframe.criteria-table,
+    .dataframe.pressures-table {
         width: 100%;
         margin-top: 50px;
         overflow-x: auto;
-        border:"1";
-    }
-
-    .dataframe.pressures-table{
-        width: 100%;
-        margin-top: 50px;
-        overflow-x: auto;
-        border:"1";
+        border: 1;
     }
 
     .home-section {
@@ -261,9 +260,10 @@ li a {
         background-color: black;
         color: white;
         margin: 0 auto;
+        padding-bottom: 20px; /* Añadir espacio inferior si es necesario */
     }
 
-    .cite{
+    .cite {
         font-size: 3vw;
     }
 
@@ -288,21 +288,8 @@ li a {
         z-index: 1;
     }
 
-    .home-section {
-        position: relative;
-        text-align: center;
-        background-color: black;
-        color: white;
-        margin: 0 auto;
-        padding-bottom: 20px; /* Añadir espacio inferior si es necesario */
-    }
-
     .criteria-table-container, .endogenous-table-container, .exogenous-table-container, 
-    .ecoregions-table-container {
-    overflow-x: auto;
-    }
-
-    .pressures-table-container {
-    overflow-x: auto;
+    .ecoregions-table-container, .pressures-table-container {
+        overflow-x: auto;
     }
 }
