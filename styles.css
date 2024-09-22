@@ -48,7 +48,7 @@ nav .logo-right {
     display: flex;
     justify-content: center;
     flex-grow: 1; /* Ocupa todo el espacio disponible */
-    gap: 30px; /* Espacio entre los elementos */
+    gap: 4vw; /* Espacio entre los elementos */
 }
 
 .nav-links a {
