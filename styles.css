@@ -1,3 +1,6 @@
+
+/* DESCKTOP FIRST APPROACH */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -228,12 +231,12 @@ li a {
     }
 
     .nav-center img {
-        height: 6vw;
-        margin: 0 2vw; /* Ajusta el espacio entre las imágenes */
+        height: 7vw;
+        margin: 0 0.5vw; /* Ajusta el espacio entre las imágenes */
     }
 
     nav .logo-right {
-        height: 9vw;
+        height: 13vw;
         margin-left: auto; /* Alinea el logo derecho a la derecha */
         
         margin-right: 5%;
