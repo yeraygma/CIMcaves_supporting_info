@@ -8,20 +8,30 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Ocultar todas las secciones al cargar la página, excepto el div específico en 'home'
-            var sections = document.querySelectorAll('.content-container');
-            sections.forEach(function(section) {
-                if (section.id !== 'home-content') {
-                    section.style.display = 'none';
-                }
-            });
-        
             var navLinks = document.querySelectorAll('.nav-links a');
             var navContainer = document.querySelector('.nav-links');
             var menuButton = document.querySelector('.menu-button');
         
+            // Mostrar/ocultar el menú en pantallas móviles
+            menuButton.addEventListener('click', function() {
+                navContainer.classList.toggle('show'); // Añadir o quitar la clase 'show' para desplegar o colapsar el menú
+            });
+        
+            // Manejar clics en los enlaces del menú para colapsarlo después de seleccionar un enlace
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var targetId = this.getAttribute('href').substring(1);
+                    showSection(targetId);
+        
+                    // Contraer el menú después de hacer clic en un enlace
+                    navContainer.classList.remove('show');
+                });
+            });
+        
             // Función para mostrar una sección específica
             function showSection(sectionId) {
+                var sections = document.querySelectorAll('.content-container');
                 sections.forEach(function(section) {
                     section.style.display = 'none';
                 });
@@ -44,36 +54,9 @@
             if (section) {
                 showSection(section);
             }
-        
-            // Mostrar/ocultar el menú en pantallas móviles
-            menuButton.addEventListener('click', function() {
-                navContainer.classList.toggle('show');
-            });
-        
-            // Manejar clics en enlaces de navegación
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    var targetId = this.getAttribute('href').substring(1);
-                    showSection(targetId);
-        
-                    // Contraer el menú en versión móvil después de hacer clic en un enlace
-                    if (window.innerWidth <= 768) {
-                        navContainer.classList.remove('show');
-                    }
-                });
-            });
-        
-            // Cerrar el menú si se hace clic fuera del mismo en móviles
-            document.addEventListener('click', function(event) {
-                if (!navContainer.contains(event.target) && !menuButton.contains(event.target)) {
-                    if (navContainer.classList.contains('show')) {
-                        navContainer.classList.remove('show');
-                    }
-                }
-            });
         });
         </script>
+        
         
         
      
