@@ -33,8 +33,22 @@ nav {
     align-items: center;
 }
 
-.nav-center img {
-    height: 1.8vw;
+
+
+
+nav .logo-main {
+    height: 2.8vw; /* Tamaño reducido en pantalla móvil para los demás logos */
+}
+
+nav .logo-large {
+    height: 1.4vw; /* Tamaño reducido en pantalla móvil para los demás logos */
+    margin: 0 1vw; /* Ajusta el espacio entre las imágenes */
+    margin-bottom: 0.3vw;
+}
+
+
+nav .logo-small {
+    height: 1.6vw; /* Tamaño reducido en pantalla móvil para los demás logos */
     margin: 0 1vw; /* Ajusta el espacio entre las imágenes */
 }
 
@@ -176,6 +190,7 @@ li a {
         color: black;
         font-size: 24px;
         cursor: pointer;
+        margin-left: -7%;
     }
 
     .menu-button:focus + .nav-links,
@@ -213,6 +228,10 @@ li a {
         display: block;
     }
 
+    .nav-links a:hover {
+        background-color: #f0f0f0;
+    }
+
     nav {
         width: 100vw;
         padding: 0 10px;
@@ -226,17 +245,34 @@ li a {
         display: flex;
         flex-wrap: wrap; /* Permite que las imágenes se distribuyan en varias filas si no caben */
         justify-content: center; /* Centra las imágenes horizontalmente */
-        gap: 0vw; /* Espacio entre las imágenes */
         flex-grow: 1; /* Permite que el .nav-center crezca para ocupar el espacio entre el menu-button y logo-right */
         align-items: center; /* Alinea verticalmente las imágenes */
     }
       
     .nav-center img {
         width: auto; /* Asegura que la relación de aspecto de la imagen se mantenga */
-        height: 3.8vw; /* Ajusta la altura de las imágenes */
         object-fit: contain; /* Asegura que la imagen se ajuste sin deformarse */
-        margin-left: 2.5vw;
-        margin-right: 3vw;
+        margin-left: 2vw;
+        margin-right: 4vw;
+    }
+
+    nav .logo-main {
+        height: 5vw; /* Tamaño reducido en pantalla móvil para los demás logos */
+        width: auto; /* Asegura que la relación de aspecto de la imagen se mantenga */
+    }
+    
+    nav .logo-large {
+        height: 3.4vw; /* Tamaño reducido en pantalla móvil para los demás logos */
+        margin-left:1vw; /* Ajusta el espacio entre las imágenes */
+        margin-bottom: 0.5vw;
+        width: auto; /* Asegura que la relación de aspecto de la imagen se mantenga */
+    }
+    
+    
+    nav .logo-small {
+        height: 3.6vw; /* Tamaño reducido en pantalla móvil para los demás logos */
+        margin-left: 1vw; /* Ajusta el espacio entre las imágenes */
+        width: auto; /* Asegura que la relación de aspecto de la imagen se mantenga */
     }
 
     nav .logo-right {
@@ -252,6 +288,24 @@ li a {
         width: 90%;
         transform: translateY(-60px); /* Ajuste para móviles */
     }
+
+
+    .content-container li {
+        margin-bottom: 15px;
+        word-wrap: break-word; /* Asegura que las palabras largas se ajusten */
+        overflow-wrap: break-word; /* Compatibilidad adicional */
+    }
+    
+    .content-container a {
+        color: #007BFF; /* Estilo de color para los enlaces */
+        text-decoration: none;
+        word-break: break-all; /* Rompe las palabras largas, como las URLs */
+    }
+    
+    .content-container a:hover {
+        text-decoration: underline; /* Subrayado al pasar el ratón */
+    }
+
 
     .dataframe.criteria-table,
     .dataframe.pressures-table {

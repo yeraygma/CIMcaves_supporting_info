@@ -7,61 +7,65 @@
     <link rel="stylesheet" href="./styles.css">
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    // Ocultar todas las secciones al cargar la página, excepto el div específico en 'home'
-    var sections = document.querySelectorAll('.content-container');
-    sections.forEach(function(section) {
-        if (section.id !== 'home-content') {
-            section.style.display = 'none';
-        }
-    });
-
-    var navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            var targetId = this.getAttribute('href').substring(1);
-            showSection(targetId);
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ocultar todas las secciones al cargar la página, excepto el div específico en 'home'
+            var sections = document.querySelectorAll('.content-container');
+            sections.forEach(function(section) {
+                if (section.id !== 'home-content') {
+                    section.style.display = 'none';
+                }
+            });
+        
+            var navLinks = document.querySelectorAll('.nav-links a');
+            var navContainer = document.querySelector('.nav-links');
+            var menuButton = document.querySelector('.menu-button');
+        
+            // Función para mostrar una sección específica
+            function showSection(sectionId) {
+                sections.forEach(function(section) {
+                    section.style.display = 'none';
+                });
+        
+                var targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+        
+                    var offset = document.querySelector('nav').offsetHeight;
+                    var elementPosition = targetSection.getBoundingClientRect().top;
+                    var offsetPosition = elementPosition - offset;
+        
+                    window.scrollBy({ top: offsetPosition, behavior: 'smooth' });
+                }
+            }
+        
+            // Detectar parámetros en la URL y redirigir a la sección correspondiente
+            const params = new URLSearchParams(window.location.search);
+            const section = params.get("section");
+            if (section) {
+                showSection(section);
+            }
+        
+            // Manejar clics en enlaces de navegación
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    var targetId = this.getAttribute('href').substring(1);
+                    showSection(targetId);
+        
+                    // Contraer el menú en versión móvil después de hacer clic en un enlace
+                    if (window.innerWidth <= 768) {
+                        navContainer.classList.remove('show');
+                    }
+                });
+            });
+        
+            // Mostrar/ocultar el menú en pantallas móviles
+            menuButton.addEventListener('click', function() {
+                navContainer.classList.toggle('show');
+            });
         });
-    });
-
-    // Mostrar/ocultar el menú en pantallas móviles
-    document.querySelector('.menu-button').addEventListener('click', function() {
-        var navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('show');
-    });
-
-    // Detectar parámetros en la URL y redirigir a la sección correspondiente
-    const params = new URLSearchParams(window.location.search);
-    const section = params.get("section");
-
-    if (section) {
-        showSection(section);
-    }
-});
-
-function showSection(sectionId) {
-    var sections = document.querySelectorAll('.content-container');
-    sections.forEach(function(section) {
-        section.style.display = 'none';
-    });
-
-    var targetSection = document.getElementById(sectionId);
-    if (targetSection) {
-        targetSection.style.display = 'block';
-
-        var offset = document.querySelector('nav').offsetHeight;
-        var elementPosition = targetSection.getBoundingClientRect().top;
-        var offsetPosition = elementPosition - offset;
-
-        window.scrollBy({ top: offsetPosition, behavior: 'smooth' });
-    }
-}
-
-
-
-
-  </script>
+        </script>
+        
      
 
 </head>
@@ -70,10 +74,11 @@ function showSection(sectionId) {
   <nav class="nav-center">
     <button class="menu-button">☰</button>  
         <div>
-      <img src="./logo_ull/ull.png" alt="Logo">    
-      <img src="./logo_Ionian/logo_ionian2.jpg" alt="Logo_ionian">
-      <img src="./logos_Uni_Burgos/PNG/Escudo Color TL.png" alt="Logo_uburg">
-      <img src="./logos_IEO/ieo_csic2.png" alt="Logo_ieo"> 
+      <img src="./logo_ull/ull.png" alt="Logo" class="logo-main">    
+      <img src="./logo_Ionian/logo_ionian2.jpg" alt="Logo_ionian" class="logo-small">
+      <img src="./logos_IEO/ieo_csic2.png" alt="Logo_ieo" class="logo-small"> 
+      <img src="./logos_Uni_Burgos/PNG/Escudo Color TL.png" alt="Logo_uburg" class="logo-large">
+      
       </div>
         <div class="nav-links">
             <a href="#home-content"><b>HOME</b></a>
@@ -1613,7 +1618,7 @@ function showSection(sectionId) {
           <tr>
               <td>low</td>
       
-              <td style="text-align: left;">slightest occurrence of a threat causes </td>
+              <td style="text-align: left;">slightest occurrence of a threat causes a change, or all-or-nothing threats</td>
               <td style="text-align: left;">blast fishing in coral reefs</td>
           </tr>
           
@@ -1674,7 +1679,7 @@ function showSection(sectionId) {
               
                 <li>Andersen, J. H., Stock, A., Heinänen, S., Mannerla, M., & Vinther, M. (2013). Technical Report from DCE-Danish Centre for Environment and Energy HUMAN USES, PRESSURES AND IMPACTS IN THE EASTERN NORTH <a href="https://www.researchgate.net/publication/298147249_Human_uses_pressures_and_impacts_in_the_eastern_North_Sea" target="_blank">https://www.researchgate.net/publication/298147249_Human_uses_pressures_and_impacts_in_the_eastern_North_Sea</a> </li>
 
-                <li>Halpern, B., Frazier, M., Potapenko, J., Casey, K. S., Koneig, K., Longo, C., Lowndes, J. S., Selig, E. R., Selkoe, K. A., & Walbridge, S. (2015). Spatial and temporal changes in cumulative human impacts on the world’s ocean. <i>Nature Communications</i>, 6(7615), 1–6. <a href="https://doi.org/10.1038/ncomms8615" target="_blank">https://doi.org/10.1038/ncomms8615</a></li>
+                <li>Halpern, B., Frazier, M., Potapenko, J., Casey, K. S., Koneig, K., Longo, C., Lowndes, J. S., Selig, E. R., Selkoe, K. A., & Walbridge, S. (2015). Spatial and temporal changes in cumulative human impacts on the world's ocean. <i>Nature Communications</i>, 6(7615), 1–6. <a href="https://doi.org/10.1038/ncomms8615" target="_blank">https://doi.org/10.1038/ncomms8615</a></li>
 
                 <li>Smith, C. J., Papadopoulou, K.-N., Barnard, S., Mazik, K., Elliott, M., Patrício, J., Solaun, O., Little, S., Bhatia, N., & Borja, A. (2016). Managing the Marine Environment, Conceptual Models and Assessment Considerations for the European Marine Strategy Framework Directive. Frontiers in Marine Science, 3. <a href="https://doi.org/10.3389/fmars.2016.00144" target="_blank">https://doi.org/10.3389/fmars.2016.00144</a></li>
 
