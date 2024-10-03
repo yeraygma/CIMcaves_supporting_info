@@ -78,7 +78,7 @@ nav button {
     background-color: white;
     color: black;
     text-align: justify;
-    transform: translateY(-50px); /* Desplaza la imagen 60px hacia arriba */
+    transform: translateY(-60px); /* Desplaza la imagen 60px hacia arriba */
 }
 
 td {
@@ -145,7 +145,7 @@ li a {
     width: 70%;
     height: auto;
     position: relative;
-    top: -40px;
+    top: -60px;
     z-index: 1;
 }
 
@@ -155,7 +155,7 @@ li a {
 
 .main-header {
     position: absolute;
-    top: 18%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -171,7 +171,7 @@ li a {
         background: none;
         border: none;
         color: black;
-        font-size: 10vw;
+        font-size: 8vw;
         cursor: pointer;
         margin-left: auto; /* Empuja el botón hacia la derecha */
         margin-right: 7vw;
@@ -184,7 +184,7 @@ li a {
     }
 
     .submit-button {
-
+        order: 1;
         margin-left: auto;
         margin-right: 20px;
         font-size: 10px;
@@ -244,7 +244,7 @@ li a {
     /* Alinear el logo a la izquierda en móviles */
     .logo-right {
         height: 15vw; /* Mantén el tamaño actual del logo */
-        margin-left: 5vw; /* Empuja el logo hacia la izquierda */
+        margin-right: auto; /* Empuja el logo hacia la izquierda */
         order: 1;
     }
 
@@ -312,7 +312,7 @@ li a {
         width: 100%;
         height: auto;
         position: relative;
-        top: -40px;
+        top: -60px;
         z-index: 1;
     }
 

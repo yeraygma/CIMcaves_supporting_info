@@ -59,10 +59,11 @@
     }
     
     
+    
+    
       </script>
         
         
-    
         
      
 
@@ -79,12 +80,26 @@
             <a href="#criteria"><b>PRESSURES EVALUATION</b></a>
             <a href="#bibliography"><b>BIBLIOGRAPHY</b></a>
         </div>
-    
-           
+      
+      
+
+      
+    </div>
+        
     </nav>
 
     
+<script>
+      document.querySelector('.menu-button').addEventListener('click', function() {
+  var navLinks = document.querySelector('.nav-links');
+  if (navLinks.style.display === 'block') {
+      navLinks.style.display = 'none';
+  } else {
+      navLinks.style.display = 'block';
+  }
+});
 
+</script>
 
 <div id="home" class="home-section">
     <header class="main-header">
@@ -1667,8 +1682,5 @@
            
     </div>
    
-    
-        
-
 </body>
 </html>
