@@ -70,18 +70,38 @@ nav button {
     cursor: pointer;
 }
 
-.nav-links button {
+.button_survey {
     height: 2.5vw; /* Ajusta la altura del botón */
     font-family: 'Calibri', sans-serif;
     width: auto; /* Mantiene el ancho automático basado en el contenido */
     padding: 0 1vw; /* Añade algo de espacio alrededor del texto dentro del botón */
-    font-size: 1vw; /* Ajusta el tamaño de la fuente basado en el ancho de la ventana */
-    background-color: #c89ddeed; /* Color de fondo del botón */
+    font-size: 1.5vw; /* Ajusta el tamaño de la fuente basado en el ancho de la ventana */
+    background-color: #0e845eed; /* Color de fondo del botón */
     color: white; /* Color del texto del botón */
     border: none; /* Elimina el borde predeterminado */
     border-radius: 5px; /* Añade bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar por el botón */
 }
+.button_survey:hover {
+    background-color: #4a92b0;          /* Cambia el color de fondo al pasar el ratón */
+}
+
+.button_youtube {
+    padding: 10px 20px;                 /* Añade espacio alrededor del texto */
+    background-color: #ab9393;          /* Color de fondo rojo típico de YouTube */
+    color: rgb(247, 243, 243);                       /* Color del texto en blanco */
+    border: none;                       /* Elimina el borde predeterminado */
+    border-radius: 5px;                 /* Bordes redondeados */
+    font-size: 0.7vw;                    /* Tamaño del texto */
+    font-weight: bold;                  /* Texto en negrita */
+    cursor: pointer;                    /* Muestra un puntero de mano al pasar sobre el botón */
+    transition: background-color 0.3s;  /* Transición suave al cambiar el color de fondo */
+}
+
+.button_youtube:hover {
+    background-color: #b79c53;          /* Cambia el color de fondo al pasar el ratón */
+}
+
 
 .content-container, .bibliography-section {
     width: 70%; /* Establecido para tablet y desktop */
@@ -178,25 +198,7 @@ li a {
 }
 
 /* Estilos generales para el video responsivo */
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* Mantiene la proporción 16:9 */
-    height: 0;
-    overflow: hidden;
-    margin: 0 auto;
-}
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.video-container {
-    width: 70%; /* El video ocupa el 70% del ancho en pantallas grandes */
-}
 
 /* Estilos para pantallas móviles */
 @media (max-width: 768px) {
@@ -366,9 +368,6 @@ li a {
         overflow-x: auto;
     }
 
-    .video-container {
-        width: 100%; /* El video ocupa el 100% del ancho en pantallas pequeñas */
-    }
-
+   
     
 }
