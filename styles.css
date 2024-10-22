@@ -204,7 +204,7 @@ li a {
 
 .main-header {
     position: absolute;
-    top: 20%;
+    top: 23%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -352,7 +352,7 @@ li a {
 
     .main-header {
         position: absolute;
-        top: 0%;
+        top: 4%;
         left: 50%;
         transform: translate(-50%, -30%);
         color: white;
@@ -372,7 +372,7 @@ li a {
         width: 100%;
         height: auto;
         position: relative;
-        top: -30px;
+        top: -20px;
         z-index: 1;
     }
 
