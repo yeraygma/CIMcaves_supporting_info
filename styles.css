@@ -89,7 +89,7 @@ nav button {
 
 .button_youtube {
     padding: 10px 20px;   
-    height: 5vw; /* Ajusta la altura del botón */              /* Añade espacio alrededor del texto */
+    height: 5vw; /* Ajusta la altura del botón */            
     background-color: #b0ae45;          /* Color de fondo rojo típico de YouTube */
     color: rgb(247, 243, 243);                       /* Color del texto en blanco */
     border: none;                       /* Elimina el borde predeterminado */
@@ -381,7 +381,7 @@ li a {
 
     .button_youtube {
       
-        height: 10vw; /* Ajusta la altura del botón */
+        height: 13vw; /* Ajusta la altura del botón */
         font-size: 3vw;
       
         width: 30%;
