@@ -71,35 +71,51 @@ nav button {
 }
 
 .button_survey {
-    height: 2.5vw; /* Ajusta la altura del botón */
+    height: 10vw; /* Ajusta la altura del botón */
     font-family: 'Calibri', sans-serif;
-    width: auto; /* Mantiene el ancho automático basado en el contenido */
+    width: 20%;
     padding: 0 1vw; /* Añade algo de espacio alrededor del texto dentro del botón */
-    font-size: 1.5vw; /* Ajusta el tamaño de la fuente basado en el ancho de la ventana */
-    background-color: #0e845eed; /* Color de fondo del botón */
+    font-size: 2vw; /* Ajusta el tamaño de la fuente basado en el ancho de la ventana */
+    background-color: #27af84ed; /* Color de fondo del botón */
     color: white; /* Color del texto del botón */
     border: none; /* Elimina el borde predeterminado */
     border-radius: 5px; /* Añade bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar por el botón */
+    width: 40 vw;
 }
 .button_survey:hover {
-    background-color: #4a92b0;          /* Cambia el color de fondo al pasar el ratón */
+    background-color: #2e6832;          /* Cambia el color de fondo al pasar el ratón */
 }
 
 .button_youtube {
-    padding: 10px 20px;                 /* Añade espacio alrededor del texto */
-    background-color: #ab9393;          /* Color de fondo rojo típico de YouTube */
+    padding: 10px 20px;   
+    height: 5vw; /* Ajusta la altura del botón */              /* Añade espacio alrededor del texto */
+    background-color: #b0ae45;          /* Color de fondo rojo típico de YouTube */
     color: rgb(247, 243, 243);                       /* Color del texto en blanco */
     border: none;                       /* Elimina el borde predeterminado */
     border-radius: 5px;                 /* Bordes redondeados */
-    font-size: 0.7vw;                    /* Tamaño del texto */
+    font-size: 1.5vw;                    /* Tamaño del texto */
     font-weight: bold;                  /* Texto en negrita */
     cursor: pointer;                    /* Muestra un puntero de mano al pasar sobre el botón */
     transition: background-color 0.3s;  /* Transición suave al cambiar el color de fondo */
+    width: 20%;
+    
 }
 
 .button_youtube:hover {
-    background-color: #b79c53;          /* Cambia el color de fondo al pasar el ratón */
+    background-color: #917d40;          /* Cambia el color de fondo al pasar el ratón */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Ajusta la separación entre los botones */
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 100%; /* Ajusta según tu layout */
+    
+}
+
+.button_survey, .button_youtube {
+    margin: 0 1vw; /* Opcional: Añade margen entre los botones si necesitas más separación */
 }
 
 
@@ -219,12 +235,7 @@ li a {
         display: flex;
     }
 
-    .submit-button {
-
-        margin-left: auto;
-        margin-right: 20px;
-        font-size: 10px;
-    }
+ 
 
     .nav-links {
         display: none;
@@ -366,6 +377,24 @@ li a {
     .criteria-table-container, .endogenous-table-container, .exogenous-table-container, 
     .ecoregions-table-container, .pressures-table-container {
         overflow-x: auto;
+    }
+
+    .button_youtube {
+      
+        height: 10vw; /* Ajusta la altura del botón */
+        font-size: 3vw;
+      
+        width: 30%;
+        
+    }
+
+    .button_survey {
+      
+        height: 15vw; /* Ajusta la altura del botón */
+        font-size: 5vw;
+      
+        width: 30%;
+        
     }
 
    
