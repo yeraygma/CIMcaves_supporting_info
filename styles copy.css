@@ -1,0 +1,323 @@
+
+/* DESCKTOP FIRST APPROACH */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Calibri', sans-serif;
+    background-color: black;
+    color: white;
+    padding-top: 60px; /* Ajuste para mobile-first */
+}
+
+nav {
+    background-color: white;
+    height: 6vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+/* Añadido: Definición de .nav-center para pantallas de escritorio */
+.nav-center {
+    display: flex;
+    flex: 1; /* Ocupa el espacio disponible entre el menú y el logo derecho */
+    justify-content: center; /* Centra horizontalmente las imágenes */
+    align-items: center;
+}
+
+
+
+.logo-right {
+    height: 5.5vw;
+    margin-right: auto;
+
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; /* Ocupa todo el espacio disponible */
+    gap: 7vw; /* Espacio entre los elementos */
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5vw;
+}
+
+.menu-button:focus + .nav-links,
+.nav-links:focus-within {
+    display: flex; /* Hace visibles los enlaces cuando se activa el botón del menú */
+}
+
+nav button {
+    padding: 15px;
+}
+
+.menu-button {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.content-container, .bibliography-section {
+    width: 70%; /* Establecido para tablet y desktop */
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: white;
+    color: black;
+    text-align: justify;
+    transform: translateY(-50px); /* Desplaza la imagen 60px hacia arriba */
+}
+
+td {
+    text-align: center;
+}
+
+.dataframe.ecoregions-table td,
+.dataframe.exogenous-table td,
+.dataframe.endogenous-table td {
+    text-align: left;
+}
+
+.dataframe.ecoregions-table th,
+.dataframe.exogenous-table th,
+.dataframe.endogenous-table th {
+    text-align: center;
+}
+
+.dataframe.criteria-table,
+.dataframe.exogenous-table,
+.dataframe.endogenous-table,
+.dataframe.ecoregions-table,
+.dataframe.pressures-table {
+    width: 100%; 
+    margin-top: 50px; 
+    overflow-x: auto; 
+    border: 1px solid black; 
+    border-collapse: collapse;
+}
+
+.dataframe.criteria-table th,
+.dataframe.criteria-table td,
+.dataframe.exogenous-table th,
+.dataframe.exogenous-table td,
+.dataframe.endogenous-table th,
+.dataframe.endogenous-table td,
+.dataframe.ecoregions-table th,
+.dataframe.ecoregions-table td,
+.dataframe.pressures-table th,
+.dataframe.pressures-table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+li a {
+    color: #8a28a8ed; /* Color de los enlaces */
+}
+
+.submit-button {
+    margin-left: auto;
+}
+
+.home-section {
+    position: relative;
+    text-align: center;
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+}
+
+.home-image {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+    position: relative;
+    top: -40px;
+    z-index: 1;
+}
+
+.cite {
+    font-size: 0.9vw;
+}
+
+.main-header {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 70%;
+    font-size: 2.5vw;
+    z-index: 2;
+}
+
+/* Estilos para pantallas móviles */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block; /* Visible en móviles */
+        background: none;
+        border: none;
+        color: black;
+        font-size: 10vw;
+        cursor: pointer;
+        margin-left: auto; /* Empuja el botón hacia la derecha */
+        margin-right: 7vw;
+        order: 2;
+    }
+
+    .menu-button:focus + .nav-links,
+    .nav-links:focus-within {
+        display: flex;
+    }
+
+    .submit-button {
+
+        margin-left: auto;
+        margin-right: 20px;
+        font-size: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        width: 80%; /* Ocupa el 80% del ancho cuando se muestra */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        background-color: white;
+        padding: 10px 0;
+        font-size: 16px;
+        align-items: center; 
+        justify-content: center;
+        z-index: 101;  /* Asegura que esté por encima de otros elementos */
+    }
+
+    /* Mostrar el menú cuando se añade la clase "show" */
+    .nav-links.show {
+       display: flex;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .nav-links a:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* Ajustar el contenedor de navegación en móviles */
+    nav {
+        width: 100vw;
+        padding: 0 10px;
+        height: auto; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Asegura que el logo y el botón estén en los extremos */
+    }
+
+ 
+    .nav-center img {
+        width: auto; /* Asegura que la relación de aspecto de la imagen se mantenga */
+        object-fit: contain; /* Asegura que la imagen se ajuste sin deformarse */
+       
+    }
+
+
+
+    /* Alinear el logo a la izquierda en móviles */
+    .logo-right {
+        height: 15vw; /* Mantén el tamaño actual del logo */
+        margin-left: 5vw; /* Empuja el logo hacia la izquierda */
+        order: 1;
+    }
+
+    .content-container {
+        padding: 20px;
+        background-color: white;
+        width: 90%;
+        transform: translateY(-60px); /* Ajuste para móviles */
+    }
+
+
+    .content-container li {
+        margin-bottom: 15px;
+        word-wrap: break-word; /* Asegura que las palabras largas se ajusten */
+        overflow-wrap: break-word; /* Compatibilidad adicional */
+    }
+    
+    .content-container a {
+        color: #007BFF; /* Estilo de color para los enlaces */
+        text-decoration: none;
+        word-break: break-all; /* Rompe las palabras largas, como las URLs */
+    }
+    
+    .content-container a:hover {
+        text-decoration: underline; /* Subrayado al pasar el ratón */
+    }
+
+
+    .dataframe.criteria-table,
+    .dataframe.pressures-table {
+        width: 100%;
+        margin-top: 50px;
+        overflow-x: auto;
+        border: 1;
+    }
+
+    .home-section {
+        position: relative;
+        text-align: center;
+        background-color: black;
+        color: white;
+        margin: 0 auto;
+        padding-bottom: 20px; /* Añadir espacio inferior si es necesario */
+    }
+
+    .cite {
+        font-size: 3vw;
+    }
+
+    .main-header {
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        color: white;
+        width: 100%;
+        align-items: center; 
+        z-index: 2;
+        font-size: 4vw;
+    }
+
+    .home-image {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: -40px;
+        z-index: 1;
+    }
+
+    .criteria-table-container, .endogenous-table-container, .exogenous-table-container, 
+    .ecoregions-table-container, .pressures-table-container {
+        overflow-x: auto;
+    }
+}
