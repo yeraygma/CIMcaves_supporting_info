@@ -5,6 +5,6 @@ This website contains supplementary information that helps to fill the survey ab
 
 Here you can find material such as definitions, the ecoregions of the world so that you can find yours, the criteria for evaluating pressures with examples, and selected bibliography.
 
-If you are a scientist working for a university, research institution, government agency, NGO, or private company with some knowledge of marine caves, or if you are an experienced diver in marine caves, we would love for you to participate in this survey. You can find it here: https://yeraygma.github.io/CIMcaves_supporting_info
+If you are a scientist or researcher working at a university, research institution, government agency, NGO, or private company with experience in marine caves and knowledge of marine human activities in your working area, we would love for you to participate in this survey. You can find it here: https://yeraygma.github.io/CIMcaves_supporting_info
 
 
